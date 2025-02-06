@@ -1,0 +1,575 @@
+/* Estilos gerais */
+body {
+    font-family: 'Bangers', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    overflow-x: hidden; /* Evita barras de rolagem horizontais */
+    background: transparent; /* Remove o fundo preto */
+}
+
+/* Imagem de fundo com opacidade */
+body::before {
+    content: "";
+    position: fixed; /* Fixa a imagem de fundo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('tubarao.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.3; /* Ajuste a opacidade da imagem */
+    z-index: -1; /* Coloca a imagem atrás de todo o conteúdo */
+}
+
+/* Conteúdo principal */
+.conteudo {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+    color: white;
+}
+
+/* Estilos do cabeçalho */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: moveText 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+.shark {
+    margin-right: 10px;
+    animation: swim 2s infinite alternate ease-in-out;
+}
+
+@keyframes swim {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Menu de navegação */
+nav {
+    background: rgba(34, 34, 34, 0.8); /* Fundo semi-transparente */
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background: rgba(51, 51, 51, 0.8); /* Fundo semi-transparente ao passar o mouse */
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Links de contato */
+.contact-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contact-link svg {
+    margin-right: 8px;
+}
+
+/* Conteúdo principal */
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Estilos de texto */
+h1, h2, p {
+    font-family: 'Bangers', cursive;
+    color: #ffd119;
+    text-shadow: 
+        1px 1px 0 black, 
+        -1px -1px 0 black,  
+        1px -1px 0 black,
+        -1px 1px 0 black;
+}
+
+#eventos {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#eventos {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Botões redondos */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo mais escuro ao passar o mouse */
+    transform: translateY(-50%) scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(-50%) scale(0.9); /* Efeito de clique */
+}
+
+.prev {
+    left: 20px; /* Distância da borda esquerda */
+}
+
+.next {
+    right: 20px; /* Distância da borda direita */
+}
+
+/* Ícones com FontAwesome */
+button i {
+    font-size: 20px;
+}
+
+
+#musicas {
+    text-align: center; /* Centraliza o título */
+    padding: 20px 0; /* Espaçamento ao redor da seção */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 960px; /* Tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.video-container iframe {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o vídeo ocupar toda a altura do contêiner */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+    border: none; /* Remove a borda do iframe */
+}
+
+#musicas {
+    text-align: center; /* Centraliza o título */
+    padding: 20px 0; /* Espaçamento ao redor da seção */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 960px; /* Tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.video-container iframe {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o vídeo ocupar toda a altura do contêiner */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+    border: none; /* Remove a borda do iframe */
+}
+
+#musicas {
+    text-align: center; /* Centraliza o título */
+    padding: 20px 0; /* Espaçamento ao redor da seção */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 960px; /* Tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.video-container iframe {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o vídeo ocupar toda a altura do contêiner */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+    border: none; /* Remove a borda do iframe */
+}
+
+#musicas {
+    text-align: center; /* Centraliza o título */
+    padding: 20px 0; /* Espaçamento ao redor da seção */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 960px; /* Tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.video-container iframe {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o vídeo ocupar toda a altura do contêiner */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+    border: none; /* Remove a borda do iframe */
+}
+
+#musicas {
+    text-align: center; /* Centraliza o título */
+    padding: 20px 0; /* Espaçamento ao redor da seção */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 960px; /* Tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.video-container iframe {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o vídeo ocupar toda a altura do contêiner */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+    border: none; /* Remove a borda do iframe */
+}
+
+#musicas {
+    text-align: center; /* Centraliza o título */
+    padding: 20px 0; /* Espaçamento ao redor da seção */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 960px; /* Tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.video-container iframe {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o vídeo ocupar toda a altura do contêiner */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+    border: none; /* Remove a borda do iframe */
+}
+
+#musicas {
+    text-align: center; /* Centraliza o título */
+    padding: 20px 0; /* Espaçamento ao redor da seção */
+}
+
+.video-container {
+    width: 100%;
+    max-width: 960px; /* Tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.video-container iframe {
+    width: 100%; /* Faz o vídeo ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o vídeo ocupar toda a altura do contêiner */
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+    border: none; /* Remove a borda do iframe */
+}
+
+.music-links {
+    margin-top: 20px; /* Espaçamento acima dos links */
+    display: flex;
+    justify-content: center; /* Alinha os botões horizontalmente */
+    gap: 20px; /* Espaço entre os botões */
+}
+
+.music-links a {
+    font-size: 16px; /* Aumenta o tamanho do texto */
+    color: white; /* Cor do texto */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px 20px; /* Tamanho do botão */
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para dar destaque */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-links a:hover {
+    transform: translateY(-2px); /* Leve efeito de elevação */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
+}
+
+.music-links .spotify {
+    background-color: #1DB954; /* Cor do fundo do Spotify */
+    border: 2px solid #1DB954;
+}
+
+.music-links .spotify:hover {
+    background-color: #1aa34a; /* Cor mais escura no hover */
+}
+
+.music-links .deezer {
+    background-color: #006fd6; /* Cor do fundo do Deezer */
+    border: 2px solid #006fd6;
+}
+
+.music-links .deezer:hover {
+    background-color: #005bb5; /* Cor mais escura no hover */
+}
+
+.music-links .youtube-music {
+    background-color: #FF0000; /* Cor do fundo do YouTube Music */
+    border: 2px solid #FF0000;
+}
+
+.music-links .youtube-music:hover {
+    background-color: #cc0000; /* Cor mais escura no hover */
+}
+
+.music-links i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 20px; /* Tamanho do ícone */
+}
+
+#eventos {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery img {
+    width: 60%; /* Diminui o tamanho da imagem para 60% da largura do contêiner */
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    object-fit: cover;
+    flex-shrink: 0;
+    margin: 0 10px; /* Adiciona um pequeno espaço entre as imagens */
+}
+
+#eventos h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Botões redondos */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo mais escuro ao passar o mouse */
+    transform: translateY(-50%) scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(-50%) scale(0.9); /* Efeito de clique */
+}
+
+.prev {
+    left: 20px; /* Distância da borda esquerda */
+}
+
+.next {
+    right: 20px; /* Distância da borda direita */
+}
+
+button i {
+    font-size: 20px;
+}
+
+
+#eventos {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery img {
+    width: 60%; /* Diminui o tamanho da imagem para 60% da largura do contêiner */
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    object-fit: cover;
+    flex-shrink: 0;
+    margin: 0 10px; /* Adiciona um pequeno espaço entre as imagens */
+}
+
+#eventos h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Botões redondos */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo mais escuro ao passar o mouse */
+    transform: translateY(-50%) scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(-50%) scale(0.9); /* Efeito de clique */
+}
+
+.prev {
+    left: 20px; /* Distância da borda esquerda */
+}
+
+.next {
+    right: 20px; /* Distância da borda direita */
+}
+
+button i {
+    font-size: 20px;
+}
+
+#sobre {
+    padding: 20px;
+    text-align: center;
+}
+
+#sobre h2 {
+    font-size: 32px; /* Aumentando o tamanho do título */
+    color: #ffd119;
+    margin-bottom: 15px;
+}
+#sobre p {
+    font-size: 20px; /* Tamanho do texto */
+    line-height: 1.6; /* Espaçamento entre as linhas */
+    color: #ffd119; /* Cor do texto (amarelo suave) */
+    max-width: 800px; /* Limita a largura do parágrafo */
+    margin: 0 auto; /* Centraliza o texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 20px; /* Adiciona um espaço interno ao redor do parágrafo */
+    background-color: rgba(44, 62, 80, 0.8); /* Fundo com opacidade (azul escuro claro) */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
